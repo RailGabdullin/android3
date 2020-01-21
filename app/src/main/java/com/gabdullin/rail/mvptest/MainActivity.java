@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         users.add(new User(3, "Саша", "@sasha", "vc.ru", "vc.ru"));
         users.add(new User(4, "Настя", "@nastya", "vc.ru", "vc.ru"));
         users.add(new User(5, "Катя", "@katya", "vc.ru", "vc.ru"));
+        users.add(new User(6, "Dasha", "@dasha", "vc.ru", "vc.ru"));
         return users;
     }
 }
