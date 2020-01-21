@@ -5,6 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gabdullin.rail.mvptest.users.list.User;
+
+import java.util.ArrayList;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -19,6 +23,11 @@ public class MainFragment extends Fragment {
     @BindView(R.id.recycler)
     RecyclerView recyclerView;
     Unbinder unbinder;
+    ArrayList<User> users;
+
+    MainFragment(ArrayList<User> users){
+        this.users = users;
+    }
 
     @Nullable
     @Override
@@ -32,7 +41,7 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        recyclerView.setAdapter(new UserListAdapter());
+        recyclerView.setAdapter(new UserListAdapter(users));
         recyclerView.setHasFixedSize(true);
     }
 
